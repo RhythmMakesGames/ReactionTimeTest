@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://chnggs7tdnmc5"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_jcfoy"]
+[ext_resource type="PackedScene" uid="uid://cjqebfhl081r7" path="res://hud.tscn" id="2_lyjhx"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jcfoy")
+
+[node name="Blue" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.282353, 0.501961, 0.717647, 1)
+
+[node name="Red" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.8, 0.196078, 0.196078, 1)
+
+[node name="Green" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.176471, 0.788235, 0.215686, 1)
+
+[node name="HUD" parent="." instance=ExtResource("2_lyjhx")]
+
+[connection signal="start_test" from="HUD" to="." method="_on_hud_start_test"]
